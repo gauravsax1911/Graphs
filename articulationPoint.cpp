@@ -43,6 +43,8 @@ void dfs(int src , int par , vector<vector<edge>> &graph)
     return;
 }
 
+
+
 void apCount(int n , vector<vector<edge>> &graph)
 {
     dis.resize(n);
@@ -57,7 +59,15 @@ void apCount(int n , vector<vector<edge>> &graph)
     {
            if(!vis[i])
            {
+               articulationPoint[i] = -1;
                dfs(i,-1,graph);
            }
     }
+
+    // all the i's where the articulationPoint arr value is non zero
+    // that is one of the articulation point
+
+    // and the number of components in which it divides the graph is articulationPoint[i] + 1
+
+    
 }
